@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillForge — Create Account</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Auth Specialized Style -->
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+<body>
+
+    <div class="auth-container" style="border-color: var(--success);">
+        <div class="auth-header">
+            <h1 style="color: var(--success);">FORGE ACCOUNT</h1>
+            <p>COMMENCE YOUR MASTERY</p>
+        </div>
+        
+        <form method="post" class="auth-form auth-success">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="auth-btn" style="background: var(--success);">CREATE &raquo;</button>
+        </form>
+        
+        <div class="auth-footer">
+            ALREADY MASTERED? <a href="{% url 'accounts:login' %}" style="color: var(--success);">LOGIN HERE</a>
+        </div>
+    </div>
+
+</body>
+</html>

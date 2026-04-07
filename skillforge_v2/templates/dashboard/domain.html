@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card" style="text-align: center; border-top: 5px solid var(--primary); padding: 3rem 1.5rem;">
+    <div style="font-size: 3rem; margin-bottom: 1rem;">
+        {% if domain.name == 'Frontend' %}🎨{% elif domain.name == 'Backend' %}⚙️{% elif domain.name == 'DSA' %}🧠{% elif domain.name == 'SQL' %}📊{% else %}🛡️{% endif %}
+    </div>
+    <h2 style="color: var(--primary); margin: 0; font-family: 'Outfit'; font-weight: 900; font-size: 2.2rem;">{{ domain.name|upper }} MASTERY</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Journey through 100 levels of specialized challenges.</p>
+    
+    <div style="max-width: 600px; margin: 0 auto;">
+        <!-- Progress Bar -->
+        <div style="background: #222; height: 12px; border-radius: 10px; overflow: hidden; margin-bottom: 0.5rem; border: 1px solid #333;">
+            <div style="background: linear-gradient(90deg, var(--primary), #818cf8); height: 100%; width: {{ current_level_num }}%; transition: width 1s ease-out;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); font-weight: bold; margin-bottom: 2.5rem;">
+            <span>Level 0</span>
+            <span style="color: var(--primary);">{{ current_level_num }}% COMPLETE</span>
+            <span>Mastery</span>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 2rem;">
+            {% if is_completed %}
+                <h3 style="color: var(--success); margin-top: 0;">🏆 Domain Mastered!</h3>
+                <p style="font-size: 0.95rem;">You have conquered all 100 levels of {{ domain.name }}. Your expertise is undeniable.</p>
+                <a href="{% url 'dashboard:home' %}" class="btn" style="margin-top: 1rem;">Back to Domains</a>
+            {% else %}
+                {% if current_level_obj %}
+                    <span style="color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Currently At</span>
+                    <h3 style="margin: 0.5rem 0 1.5rem 0; font-size: 1.5rem;">Level {{ current_level_num }}: {{ current_level_obj.title }}</h3>
+                    
+                    <div style="display: flex; justify-content: center; gap: 1rem;">
+                        <a href="{% url 'dashboard:level' current_level_obj.id %}" class="btn" style="padding: 1rem 2.5rem; font-size: 1rem; box-shadow: 0 4px 15px var(--primary-glow);">
+                            Resume Journey &raquo;
+                        </a>
+                    </div>
+                {% else %}
+                    <p style="color: var(--text-muted);">Initial levels are being forged by the AI. Check back soon!</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

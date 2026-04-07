@@ -1,0 +1,905 @@
+{
+  "domain": "CS_Fundamentals",
+  "levels": [
+    {
+      "level": 1,
+      "title": "AND Gate #1",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "easy",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 2,
+      "title": "Binary to Decimal #2",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "easy",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 3,
+      "title": "File Permissions #3",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "easy",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 4,
+      "title": "HTTP Success Code #4",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "easy",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 5,
+      "title": "KB to Bytes #5",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "easy",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 6,
+      "title": "FIFO Logic #6",
+      "description": "Pick the first process from the list.",
+      "difficulty": "easy",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 7,
+      "title": "Pointer Dereference #7",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "easy",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 8,
+      "title": "Caesar Cipher Shift #8",
+      "description": "Shift the character code by 1.",
+      "difficulty": "easy",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 9,
+      "title": "Waiting State #9",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "easy",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 10,
+      "title": "ASCII Code #10",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "easy",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 11,
+      "title": "AND Gate #11",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "easy",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 12,
+      "title": "Binary to Decimal #12",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "easy",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 13,
+      "title": "File Permissions #13",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "easy",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 14,
+      "title": "HTTP Success Code #14",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "easy",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 15,
+      "title": "KB to Bytes #15",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "easy",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 16,
+      "title": "FIFO Logic #16",
+      "description": "Pick the first process from the list.",
+      "difficulty": "easy",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 17,
+      "title": "Pointer Dereference #17",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "easy",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 18,
+      "title": "Caesar Cipher Shift #18",
+      "description": "Shift the character code by 1.",
+      "difficulty": "easy",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 19,
+      "title": "Waiting State #19",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "easy",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 20,
+      "title": "ASCII Code #20",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "easy",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 21,
+      "title": "AND Gate #21",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "medium",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 22,
+      "title": "Binary to Decimal #22",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "medium",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 23,
+      "title": "File Permissions #23",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "medium",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 24,
+      "title": "HTTP Success Code #24",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "medium",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 25,
+      "title": "KB to Bytes #25",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "medium",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 26,
+      "title": "FIFO Logic #26",
+      "description": "Pick the first process from the list.",
+      "difficulty": "medium",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 27,
+      "title": "Pointer Dereference #27",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "medium",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 28,
+      "title": "Caesar Cipher Shift #28",
+      "description": "Shift the character code by 1.",
+      "difficulty": "medium",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 29,
+      "title": "Waiting State #29",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "medium",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 30,
+      "title": "ASCII Code #30",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "medium",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 31,
+      "title": "AND Gate #31",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "medium",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 32,
+      "title": "Binary to Decimal #32",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "medium",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 33,
+      "title": "File Permissions #33",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "medium",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 34,
+      "title": "HTTP Success Code #34",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "medium",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 35,
+      "title": "KB to Bytes #35",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "medium",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 36,
+      "title": "FIFO Logic #36",
+      "description": "Pick the first process from the list.",
+      "difficulty": "medium",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 37,
+      "title": "Pointer Dereference #37",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "medium",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 38,
+      "title": "Caesar Cipher Shift #38",
+      "description": "Shift the character code by 1.",
+      "difficulty": "medium",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 39,
+      "title": "Waiting State #39",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "medium",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 40,
+      "title": "ASCII Code #40",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "medium",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 41,
+      "title": "AND Gate #41",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "medium",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 42,
+      "title": "Binary to Decimal #42",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "medium",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 43,
+      "title": "File Permissions #43",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "medium",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 44,
+      "title": "HTTP Success Code #44",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "medium",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 45,
+      "title": "KB to Bytes #45",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "medium",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 46,
+      "title": "FIFO Logic #46",
+      "description": "Pick the first process from the list.",
+      "difficulty": "medium",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 47,
+      "title": "Pointer Dereference #47",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "medium",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 48,
+      "title": "Caesar Cipher Shift #48",
+      "description": "Shift the character code by 1.",
+      "difficulty": "medium",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 49,
+      "title": "Waiting State #49",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "medium",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 50,
+      "title": "ASCII Code #50",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "medium",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 51,
+      "title": "AND Gate #51",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "hard",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 52,
+      "title": "Binary to Decimal #52",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "hard",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 53,
+      "title": "File Permissions #53",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "hard",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 54,
+      "title": "HTTP Success Code #54",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "hard",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 55,
+      "title": "KB to Bytes #55",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "hard",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 56,
+      "title": "FIFO Logic #56",
+      "description": "Pick the first process from the list.",
+      "difficulty": "hard",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 57,
+      "title": "Pointer Dereference #57",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "hard",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 58,
+      "title": "Caesar Cipher Shift #58",
+      "description": "Shift the character code by 1.",
+      "difficulty": "hard",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 59,
+      "title": "Waiting State #59",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "hard",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 60,
+      "title": "ASCII Code #60",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "hard",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 61,
+      "title": "AND Gate #61",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "hard",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 62,
+      "title": "Binary to Decimal #62",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "hard",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 63,
+      "title": "File Permissions #63",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "hard",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 64,
+      "title": "HTTP Success Code #64",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "hard",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 65,
+      "title": "KB to Bytes #65",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "hard",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 66,
+      "title": "FIFO Logic #66",
+      "description": "Pick the first process from the list.",
+      "difficulty": "hard",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 67,
+      "title": "Pointer Dereference #67",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "hard",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 68,
+      "title": "Caesar Cipher Shift #68",
+      "description": "Shift the character code by 1.",
+      "difficulty": "hard",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 69,
+      "title": "Waiting State #69",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "hard",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 70,
+      "title": "ASCII Code #70",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "hard",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 71,
+      "title": "AND Gate #71",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "hard",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 72,
+      "title": "Binary to Decimal #72",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "hard",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 73,
+      "title": "File Permissions #73",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "hard",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 74,
+      "title": "HTTP Success Code #74",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "hard",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 75,
+      "title": "KB to Bytes #75",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "hard",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 76,
+      "title": "FIFO Logic #76",
+      "description": "Pick the first process from the list.",
+      "difficulty": "hard",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 77,
+      "title": "Pointer Dereference #77",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "hard",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 78,
+      "title": "Caesar Cipher Shift #78",
+      "description": "Shift the character code by 1.",
+      "difficulty": "hard",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 79,
+      "title": "Waiting State #79",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "hard",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 80,
+      "title": "ASCII Code #80",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "hard",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 81,
+      "title": "AND Gate #81",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "expert",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 82,
+      "title": "Binary to Decimal #82",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "expert",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 83,
+      "title": "File Permissions #83",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "expert",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 84,
+      "title": "HTTP Success Code #84",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "expert",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 85,
+      "title": "KB to Bytes #85",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "expert",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 86,
+      "title": "FIFO Logic #86",
+      "description": "Pick the first process from the list.",
+      "difficulty": "expert",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 87,
+      "title": "Pointer Dereference #87",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "expert",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 88,
+      "title": "Caesar Cipher Shift #88",
+      "description": "Shift the character code by 1.",
+      "difficulty": "expert",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 89,
+      "title": "Waiting State #89",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "expert",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 90,
+      "title": "ASCII Code #90",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "expert",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    },
+    {
+      "level": 91,
+      "title": "AND Gate #91",
+      "description": "Implement the logical AND operation.",
+      "difficulty": "expert",
+      "concept": "Logic Gates",
+      "starter_code": "def gate_and(a, b):\n    return a | b",
+      "solution_code": "def gate_and(a, b):\n    return a & b"
+    },
+    {
+      "level": 92,
+      "title": "Binary to Decimal #92",
+      "description": "Convert a binary string to an integer.",
+      "difficulty": "expert",
+      "concept": "Number Systems",
+      "starter_code": "def to_dec(b_str):\n    return int(b_str)",
+      "solution_code": "def to_dec(b_str):\n    return int(b_str, 2)"
+    },
+    {
+      "level": 93,
+      "title": "File Permissions #93",
+      "description": "Set the permission string for a fully accessible file (777).",
+      "difficulty": "expert",
+      "concept": "OS Concepts",
+      "starter_code": "perm = '644'",
+      "solution_code": "perm = '777'"
+    },
+    {
+      "level": 94,
+      "title": "HTTP Success Code #94",
+      "description": "Return the standard HTTP status code for 'OK'.",
+      "difficulty": "expert",
+      "concept": "Networking",
+      "starter_code": "return 302",
+      "solution_code": "return 200"
+    },
+    {
+      "level": 95,
+      "title": "KB to Bytes #95",
+      "description": "Convert Kilobytes to Bytes.",
+      "difficulty": "expert",
+      "concept": "Data Units",
+      "starter_code": "def kb_to_b(kb):\n    return kb * 100",
+      "solution_code": "def kb_to_b(kb):\n    return kb * 1024"
+    },
+    {
+      "level": 96,
+      "title": "FIFO Logic #96",
+      "description": "Pick the first process from the list.",
+      "difficulty": "expert",
+      "concept": "CPU Scheduling",
+      "starter_code": "next_p = processes[-1]",
+      "solution_code": "next_p = processes[0]"
+    },
+    {
+      "level": 97,
+      "title": "Pointer Dereference #97",
+      "description": "Return the value at the pointer address (psuedo).",
+      "difficulty": "expert",
+      "concept": "Memory Management",
+      "starter_code": "def get_ptr_val(p):\n    return p",
+      "solution_code": "def get_ptr_val(p):\n    return *p"
+    },
+    {
+      "level": 98,
+      "title": "Caesar Cipher Shift #98",
+      "description": "Shift the character code by 1.",
+      "difficulty": "expert",
+      "concept": "Encryption",
+      "starter_code": "return chr(ord(c))",
+      "solution_code": "return chr(ord(c) + 1)"
+    },
+    {
+      "level": 99,
+      "title": "Waiting State #99",
+      "description": "Change the state to 'WAITING'.",
+      "difficulty": "expert",
+      "concept": "Process States",
+      "starter_code": "state = 'RUNNING'",
+      "solution_code": "state = 'WAITING'"
+    },
+    {
+      "level": 100,
+      "title": "ASCII Code #100",
+      "description": "Get the ASCII code for character 'A'.",
+      "difficulty": "expert",
+      "concept": "Character Encoding",
+      "starter_code": "code = ord('B')",
+      "solution_code": "code = ord('A')"
+    }
+  ]
+}

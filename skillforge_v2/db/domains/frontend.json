@@ -1,0 +1,905 @@
+{
+  "domain": "Frontend",
+  "levels": [
+    {
+      "level": 1,
+      "title": "Center Content with Flexbox #1",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "easy",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 2,
+      "title": "Create a 2-Column Grid #2",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "easy",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 3,
+      "title": "Set Text Transparency #3",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "easy",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 4,
+      "title": "Fix Box Sizing #4",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "easy",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 5,
+      "title": "Add Hover Smoothness #5",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "easy",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 6,
+      "title": "Absolute Centering #6",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "easy",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 7,
+      "title": "Bold Heading #7",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "easy",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 8,
+      "title": "Button Hover Effect #8",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "easy",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 9,
+      "title": "Hide Element Properly #9",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "easy",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 10,
+      "title": "Rounded Corners #10",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "easy",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 11,
+      "title": "Center Content with Flexbox #11",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "easy",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 12,
+      "title": "Create a 2-Column Grid #12",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "easy",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 13,
+      "title": "Set Text Transparency #13",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "easy",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 14,
+      "title": "Fix Box Sizing #14",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "easy",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 15,
+      "title": "Add Hover Smoothness #15",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "easy",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 16,
+      "title": "Absolute Centering #16",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "easy",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 17,
+      "title": "Bold Heading #17",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "easy",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 18,
+      "title": "Button Hover Effect #18",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "easy",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 19,
+      "title": "Hide Element Properly #19",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "easy",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 20,
+      "title": "Rounded Corners #20",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "easy",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 21,
+      "title": "Center Content with Flexbox #21",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "medium",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 22,
+      "title": "Create a 2-Column Grid #22",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "medium",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 23,
+      "title": "Set Text Transparency #23",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "medium",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 24,
+      "title": "Fix Box Sizing #24",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "medium",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 25,
+      "title": "Add Hover Smoothness #25",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "medium",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 26,
+      "title": "Absolute Centering #26",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "medium",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 27,
+      "title": "Bold Heading #27",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "medium",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 28,
+      "title": "Button Hover Effect #28",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "medium",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 29,
+      "title": "Hide Element Properly #29",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "medium",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 30,
+      "title": "Rounded Corners #30",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "medium",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 31,
+      "title": "Center Content with Flexbox #31",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "medium",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 32,
+      "title": "Create a 2-Column Grid #32",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "medium",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 33,
+      "title": "Set Text Transparency #33",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "medium",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 34,
+      "title": "Fix Box Sizing #34",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "medium",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 35,
+      "title": "Add Hover Smoothness #35",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "medium",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 36,
+      "title": "Absolute Centering #36",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "medium",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 37,
+      "title": "Bold Heading #37",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "medium",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 38,
+      "title": "Button Hover Effect #38",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "medium",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 39,
+      "title": "Hide Element Properly #39",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "medium",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 40,
+      "title": "Rounded Corners #40",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "medium",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 41,
+      "title": "Center Content with Flexbox #41",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "medium",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 42,
+      "title": "Create a 2-Column Grid #42",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "medium",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 43,
+      "title": "Set Text Transparency #43",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "medium",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 44,
+      "title": "Fix Box Sizing #44",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "medium",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 45,
+      "title": "Add Hover Smoothness #45",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "medium",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 46,
+      "title": "Absolute Centering #46",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "medium",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 47,
+      "title": "Bold Heading #47",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "medium",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 48,
+      "title": "Button Hover Effect #48",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "medium",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 49,
+      "title": "Hide Element Properly #49",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "medium",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 50,
+      "title": "Rounded Corners #50",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "medium",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 51,
+      "title": "Center Content with Flexbox #51",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "hard",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 52,
+      "title": "Create a 2-Column Grid #52",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "hard",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 53,
+      "title": "Set Text Transparency #53",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "hard",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 54,
+      "title": "Fix Box Sizing #54",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "hard",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 55,
+      "title": "Add Hover Smoothness #55",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "hard",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 56,
+      "title": "Absolute Centering #56",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "hard",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 57,
+      "title": "Bold Heading #57",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "hard",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 58,
+      "title": "Button Hover Effect #58",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "hard",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 59,
+      "title": "Hide Element Properly #59",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "hard",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 60,
+      "title": "Rounded Corners #60",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "hard",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 61,
+      "title": "Center Content with Flexbox #61",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "hard",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 62,
+      "title": "Create a 2-Column Grid #62",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "hard",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 63,
+      "title": "Set Text Transparency #63",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "hard",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 64,
+      "title": "Fix Box Sizing #64",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "hard",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 65,
+      "title": "Add Hover Smoothness #65",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "hard",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 66,
+      "title": "Absolute Centering #66",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "hard",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 67,
+      "title": "Bold Heading #67",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "hard",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 68,
+      "title": "Button Hover Effect #68",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "hard",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 69,
+      "title": "Hide Element Properly #69",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "hard",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 70,
+      "title": "Rounded Corners #70",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "hard",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 71,
+      "title": "Center Content with Flexbox #71",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "hard",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 72,
+      "title": "Create a 2-Column Grid #72",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "hard",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 73,
+      "title": "Set Text Transparency #73",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "hard",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 74,
+      "title": "Fix Box Sizing #74",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "hard",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 75,
+      "title": "Add Hover Smoothness #75",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "hard",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 76,
+      "title": "Absolute Centering #76",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "hard",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 77,
+      "title": "Bold Heading #77",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "hard",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 78,
+      "title": "Button Hover Effect #78",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "hard",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 79,
+      "title": "Hide Element Properly #79",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "hard",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 80,
+      "title": "Rounded Corners #80",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "hard",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 81,
+      "title": "Center Content with Flexbox #81",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "expert",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 82,
+      "title": "Create a 2-Column Grid #82",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "expert",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 83,
+      "title": "Set Text Transparency #83",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "expert",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 84,
+      "title": "Fix Box Sizing #84",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "expert",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 85,
+      "title": "Add Hover Smoothness #85",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "expert",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 86,
+      "title": "Absolute Centering #86",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "expert",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 87,
+      "title": "Bold Heading #87",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "expert",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 88,
+      "title": "Button Hover Effect #88",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "expert",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 89,
+      "title": "Hide Element Properly #89",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "expert",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 90,
+      "title": "Rounded Corners #90",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "expert",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    },
+    {
+      "level": 91,
+      "title": "Center Content with Flexbox #91",
+      "description": "Modify the container to center its children horizontally.",
+      "difficulty": "expert",
+      "concept": "CSS Flexbox",
+      "starter_code": ".container {\n  display: flex;\n}",
+      "solution_code": ".container {\n  display: flex;\n  justify-content: center;\n}"
+    },
+    {
+      "level": 92,
+      "title": "Create a 2-Column Grid #92",
+      "description": "Define two equal columns for the grid container.",
+      "difficulty": "expert",
+      "concept": "CSS Grid",
+      "starter_code": ".grid {\n  display: grid;\n}",
+      "solution_code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}"
+    },
+    {
+      "level": 93,
+      "title": "Set Text Transparency #93",
+      "description": "Change the heading color to be 50% transparent white.",
+      "difficulty": "expert",
+      "concept": "CSS Colors",
+      "starter_code": "h1 {\n  color: white;\n}",
+      "solution_code": "h1 {\n  color: rgba(255, 255, 255, 0.5);\n}"
+    },
+    {
+      "level": 94,
+      "title": "Fix Box Sizing #94",
+      "description": "Ensure padding doesn't increase the element's width.",
+      "difficulty": "expert",
+      "concept": "CSS Box Model",
+      "starter_code": ".box {\n  width: 100px;\n  padding: 20px;\n}",
+      "solution_code": ".box {\n  width: 100px;\n  padding: 20px;\n  box-sizing: border-box;\n}"
+    },
+    {
+      "level": 95,
+      "title": "Add Hover Smoothness #95",
+      "description": "Add a 0.3s transition for the background color.",
+      "difficulty": "expert",
+      "concept": "CSS Transitions",
+      "starter_code": "button {\n  background: blue;\n}",
+      "solution_code": "button {\n  background: blue;\n  transition: background 0.3s;\n}"
+    },
+    {
+      "level": 96,
+      "title": "Absolute Centering #96",
+      "description": "Set the child's position to absolute to allow centering.",
+      "difficulty": "expert",
+      "concept": "CSS Positioning",
+      "starter_code": ".child {\n  top: 50%;\n  left: 50%;\n}",
+      "solution_code": ".child {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}"
+    },
+    {
+      "level": 97,
+      "title": "Bold Heading #97",
+      "description": "Increase the weight of the heading text.",
+      "difficulty": "expert",
+      "concept": "CSS Typography",
+      "starter_code": "h2 {\n  font-size: 2rem;\n}",
+      "solution_code": "h2 {\n  font-size: 2rem;\n  font-weight: bold;\n}"
+    },
+    {
+      "level": 98,
+      "title": "Button Hover Effect #98",
+      "description": "Change the cursor to a pointer when hovering over a button.",
+      "difficulty": "expert",
+      "concept": "CSS Hover States",
+      "starter_code": "button {\n  background: red;\n}",
+      "solution_code": "button {\n  background: red;\n  cursor: pointer;\n}"
+    },
+    {
+      "level": 99,
+      "title": "Hide Element Properly #99",
+      "description": "Remove the element from the layout entirely.",
+      "difficulty": "expert",
+      "concept": "CSS Display",
+      "starter_code": ".hidden {\n  opacity: 0;\n}",
+      "solution_code": ".hidden {\n  display: none;\n}"
+    },
+    {
+      "level": 100,
+      "title": "Rounded Corners #100",
+      "description": "Make the box corners perfectly rounded.",
+      "difficulty": "expert",
+      "concept": "CSS Border",
+      "starter_code": ".card {\n  border: 1px solid black;\n}",
+      "solution_code": ".card {\n  border: 1px solid black;\n  border-radius: 8px;\n}"
+    }
+  ]
+}

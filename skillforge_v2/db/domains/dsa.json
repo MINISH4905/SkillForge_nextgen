@@ -1,0 +1,905 @@
+{
+  "domain": "DSA",
+  "levels": [
+    {
+      "level": 1,
+      "title": "Find Sum #1",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "easy",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 2,
+      "title": "Reverse String #2",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "easy",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 3,
+      "title": "Find Maximum #3",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "easy",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 4,
+      "title": "Base Case #4",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "easy",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 5,
+      "title": "Stack Pop #5",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "easy",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 6,
+      "title": "Queue Enqueue #6",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "easy",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 7,
+      "title": "Check Key #7",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "easy",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 8,
+      "title": "Bubble Sort Swap #8",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "easy",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 9,
+      "title": "Midpoint Calculation #9",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "easy",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 10,
+      "title": "Next Pointer #10",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "easy",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 11,
+      "title": "Find Sum #11",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "easy",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 12,
+      "title": "Reverse String #12",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "easy",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 13,
+      "title": "Find Maximum #13",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "easy",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 14,
+      "title": "Base Case #14",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "easy",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 15,
+      "title": "Stack Pop #15",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "easy",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 16,
+      "title": "Queue Enqueue #16",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "easy",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 17,
+      "title": "Check Key #17",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "easy",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 18,
+      "title": "Bubble Sort Swap #18",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "easy",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 19,
+      "title": "Midpoint Calculation #19",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "easy",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 20,
+      "title": "Next Pointer #20",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "easy",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 21,
+      "title": "Find Sum #21",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "medium",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 22,
+      "title": "Reverse String #22",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "medium",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 23,
+      "title": "Find Maximum #23",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "medium",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 24,
+      "title": "Base Case #24",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "medium",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 25,
+      "title": "Stack Pop #25",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "medium",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 26,
+      "title": "Queue Enqueue #26",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "medium",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 27,
+      "title": "Check Key #27",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "medium",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 28,
+      "title": "Bubble Sort Swap #28",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "medium",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 29,
+      "title": "Midpoint Calculation #29",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "medium",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 30,
+      "title": "Next Pointer #30",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "medium",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 31,
+      "title": "Find Sum #31",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "medium",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 32,
+      "title": "Reverse String #32",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "medium",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 33,
+      "title": "Find Maximum #33",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "medium",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 34,
+      "title": "Base Case #34",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "medium",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 35,
+      "title": "Stack Pop #35",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "medium",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 36,
+      "title": "Queue Enqueue #36",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "medium",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 37,
+      "title": "Check Key #37",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "medium",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 38,
+      "title": "Bubble Sort Swap #38",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "medium",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 39,
+      "title": "Midpoint Calculation #39",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "medium",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 40,
+      "title": "Next Pointer #40",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "medium",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 41,
+      "title": "Find Sum #41",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "medium",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 42,
+      "title": "Reverse String #42",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "medium",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 43,
+      "title": "Find Maximum #43",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "medium",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 44,
+      "title": "Base Case #44",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "medium",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 45,
+      "title": "Stack Pop #45",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "medium",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 46,
+      "title": "Queue Enqueue #46",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "medium",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 47,
+      "title": "Check Key #47",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "medium",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 48,
+      "title": "Bubble Sort Swap #48",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "medium",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 49,
+      "title": "Midpoint Calculation #49",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "medium",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 50,
+      "title": "Next Pointer #50",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "medium",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 51,
+      "title": "Find Sum #51",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "hard",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 52,
+      "title": "Reverse String #52",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "hard",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 53,
+      "title": "Find Maximum #53",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "hard",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 54,
+      "title": "Base Case #54",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "hard",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 55,
+      "title": "Stack Pop #55",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "hard",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 56,
+      "title": "Queue Enqueue #56",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "hard",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 57,
+      "title": "Check Key #57",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "hard",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 58,
+      "title": "Bubble Sort Swap #58",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "hard",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 59,
+      "title": "Midpoint Calculation #59",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "hard",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 60,
+      "title": "Next Pointer #60",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "hard",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 61,
+      "title": "Find Sum #61",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "hard",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 62,
+      "title": "Reverse String #62",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "hard",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 63,
+      "title": "Find Maximum #63",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "hard",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 64,
+      "title": "Base Case #64",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "hard",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 65,
+      "title": "Stack Pop #65",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "hard",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 66,
+      "title": "Queue Enqueue #66",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "hard",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 67,
+      "title": "Check Key #67",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "hard",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 68,
+      "title": "Bubble Sort Swap #68",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "hard",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 69,
+      "title": "Midpoint Calculation #69",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "hard",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 70,
+      "title": "Next Pointer #70",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "hard",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 71,
+      "title": "Find Sum #71",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "hard",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 72,
+      "title": "Reverse String #72",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "hard",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 73,
+      "title": "Find Maximum #73",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "hard",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 74,
+      "title": "Base Case #74",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "hard",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 75,
+      "title": "Stack Pop #75",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "hard",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 76,
+      "title": "Queue Enqueue #76",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "hard",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 77,
+      "title": "Check Key #77",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "hard",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 78,
+      "title": "Bubble Sort Swap #78",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "hard",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 79,
+      "title": "Midpoint Calculation #79",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "hard",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 80,
+      "title": "Next Pointer #80",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "hard",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 81,
+      "title": "Find Sum #81",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "expert",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 82,
+      "title": "Reverse String #82",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "expert",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 83,
+      "title": "Find Maximum #83",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "expert",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 84,
+      "title": "Base Case #84",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "expert",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 85,
+      "title": "Stack Pop #85",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "expert",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 86,
+      "title": "Queue Enqueue #86",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "expert",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 87,
+      "title": "Check Key #87",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "expert",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 88,
+      "title": "Bubble Sort Swap #88",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "expert",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 89,
+      "title": "Midpoint Calculation #89",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "expert",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 90,
+      "title": "Next Pointer #90",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "expert",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    },
+    {
+      "level": 91,
+      "title": "Find Sum #91",
+      "description": "Complete the function to return the sum of the list.",
+      "difficulty": "expert",
+      "concept": "Arrays",
+      "starter_code": "def total(nums):\n    return sum()",
+      "solution_code": "def total(nums):\n    return sum(nums)"
+    },
+    {
+      "level": 92,
+      "title": "Reverse String #92",
+      "description": "Use slicing to reverse the input string.",
+      "difficulty": "expert",
+      "concept": "Strings",
+      "starter_code": "def reverse(s):\n    return s",
+      "solution_code": "def reverse(s):\n    return s[::-1]"
+    },
+    {
+      "level": 93,
+      "title": "Find Maximum #93",
+      "description": "Update the loop to check if the current num is greater than the max.",
+      "difficulty": "expert",
+      "concept": "Loops",
+      "starter_code": "for num in nums:\n    if num < m:\n        m = num",
+      "solution_code": "for num in nums:\n    if num > m:\n        m = num"
+    },
+    {
+      "level": 94,
+      "title": "Base Case #94",
+      "description": "Add the base case for n == 0 to return 1.",
+      "difficulty": "expert",
+      "concept": "Recursion",
+      "starter_code": "def fact(n):\n    return n * fact(n-1)",
+      "solution_code": "def fact(n):\n    if n == 0: return 1\n    return n * fact(n-1)"
+    },
+    {
+      "level": 95,
+      "title": "Stack Pop #95",
+      "description": "Remove and return the last item from the stack.",
+      "difficulty": "expert",
+      "concept": "Stacks",
+      "starter_code": "def pop_item(stack):\n    stack.append(1)",
+      "solution_code": "def pop_item(stack):\n    return stack.pop()"
+    },
+    {
+      "level": 96,
+      "title": "Queue Enqueue #96",
+      "description": "Add an item to the beginning of the list to simulate a queue.",
+      "difficulty": "expert",
+      "concept": "Queues",
+      "starter_code": "def enqueue(q, val):\n    q.append(val)",
+      "solution_code": "def enqueue(q, val):\n    q.insert(0, val)"
+    },
+    {
+      "level": 97,
+      "title": "Check Key #97",
+      "description": "Check if the key exists in the dictionary before accessing.",
+      "difficulty": "expert",
+      "concept": "Dictionaries",
+      "starter_code": "def get_val(d, k):\n    return d[k]",
+      "solution_code": "def get_val(d, k):\n    if k in d: return d[k]"
+    },
+    {
+      "level": 98,
+      "title": "Bubble Sort Swap #98",
+      "description": "Swap the two elements if the first is larger.",
+      "difficulty": "expert",
+      "concept": "Sorting",
+      "starter_code": "if arr[j] < arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]",
+      "solution_code": "if arr[j] > arr[j+1]:\n    arr[j], arr[j+1] = arr[j+1], arr[j]"
+    },
+    {
+      "level": 99,
+      "title": "Midpoint Calculation #99",
+      "description": "Calculate the middle index correctly.",
+      "difficulty": "expert",
+      "concept": "Binary Search",
+      "starter_code": "mid = (low + high)",
+      "solution_code": "mid = (low + high) // 2"
+    },
+    {
+      "level": 100,
+      "title": "Next Pointer #100",
+      "description": "Move the current pointer to the next node.",
+      "difficulty": "expert",
+      "concept": "Linked Lists",
+      "starter_code": "while curr:\n    print(curr.val)",
+      "solution_code": "while curr:\n    print(curr.val)\n    curr = curr.next"
+    }
+  ]
+}

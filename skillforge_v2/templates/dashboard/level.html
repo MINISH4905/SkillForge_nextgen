@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start;" 
+     data-level-id="{{ level.id }}" 
+     data-domain="{{ level.domain.name }}" 
+     data-csrf="{{ csrf_token }}">
+    
+    <!-- Main Content -->
+    <div class="card" style="margin-top: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 style="margin: 0; color: var(--primary);">Level {{ level.level_number }}: {{ level.title }}</h2>
+            <span class="badge" style="background: var(--success);">{{ level.difficulty|title }}</span>
+        </div>
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
+
+        <div style="margin-bottom: 2rem;">
+            <h4>Concept:</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">{{ level.concept }}</p>
+
+            <h4>Task:</h4>
+            <p>{{ level.description }}</p>
+        </div>
+
+        <!-- Code Editor Section -->
+        <div class="editor-container" style="background: #111; border-radius: 8px; border: 1px solid #333; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <div style="background: #222; padding: 0.5rem 1rem; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #888;">editor.{{ level.domain.name|lower }}</span>
+                <div style="display: flex; gap: 6px;">
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
+                </div>
+            </div>
+            <textarea id="codeEditor" 
+                      style="width: 100%; height: 250px; background: transparent; color: #d4d4d4; border: none; padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.5; outline: none; resize: vertical; tab-size: 4;"
+                      spellcheck="false">{{ level.starter_code|default:"// Write your code here..." }}</textarea>
+        </div>
+
+        <!-- Terminal/Output Section -->
+        <div id="console" style="display: none; background: #0a0a0a; border: 1px solid #222; border-radius: 6px; padding: 1rem; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
+            <div id="consoleHeader" style="color: #666; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2rem;">&rsaquo;</span> Execution Result
+            </div>
+            <div id="consoleBody" style="color: #eee;"></div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
+            <a href="{% url 'dashboard:domain' level.domain.id %}" class="btn" style="background: transparent; color: var(--text-muted); border: 1px solid #444;">&laquo; Back</a>
+            
+            <div style="display: flex; gap: 1rem;">
+                <button id="runBtn" onclick="triggerEvaluation()" class="btn btn-primary" style="padding: 0.8rem 2rem; display: flex; align-items: center; gap: 10px;">
+                    <span id="runBtnText">Run & Evaluate</span>
+                    <span id="runBtnLoader" style="display: none; width: 14px; height: 14px; border: 2px solid #fff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar: Hints & Powers -->
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <!-- Hints Card -->
+        <div class="card" style="margin: 0; padding: 1.2rem;">
+            <h4 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">
+                <span>💡</span> Hints
+            </h4>
+            <div id="hintList" style="margin: 1rem 0;">
+                <!-- Hints injected by JS -->
+            </div>
+            <button id="hintBtn" onclick="unlockHint('{{ level.id }}', '{{ csrf_token }}')" 
+                    class="btn btn-secondary" style="width: 100%; display: none; font-size: 0.85rem;">
+                Get Next Hint <span id="hintBtnCost" style="opacity: 0.7; margin-left: 4px;"></span>
+            </button>
+        </div>
+
+        <!-- Powers Card -->
+        <div class="card" style="margin: 0; padding: 1.2rem;">
+            <h4 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">
+                <span>⚡</span> My Powers
+            </h4>
+            <div id="powerList" style="margin: 1rem 0;">
+                <!-- Powers injected by JS -->
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0;">
+                Purchase powers in the Shop for XP.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Transfer data attributes to body for JS access
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('[data-level-id]');
+        document.body.dataset.levelId = container.dataset.levelId;
+        document.body.dataset.domain = container.dataset.domain;
+        document.body.dataset.csrf = container.dataset.csrf;
+    });
+
+    function triggerEvaluation() {
+        evaluateCode('{{ level.domain.name }}', '{{ csrf_token }}');
+    }
+</script>
+{% endblock %}
+

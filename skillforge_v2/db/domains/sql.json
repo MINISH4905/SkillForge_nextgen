@@ -1,0 +1,905 @@
+{
+  "domain": "SQL",
+  "levels": [
+    {
+      "level": 1,
+      "title": "Select Specific Columns #1",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "easy",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 2,
+      "title": "Filter by Condition #2",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "easy",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 3,
+      "title": "Sort by Date #3",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "easy",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 4,
+      "title": "Count Records #4",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "easy",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 5,
+      "title": "Inner Join #5",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "easy",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 6,
+      "title": "Unique Values #6",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "easy",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 7,
+      "title": "Update Record #7",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "easy",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 8,
+      "title": "Delete Record #8",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "easy",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 9,
+      "title": "Group by Category #9",
+      "description": "Count items in each category.",
+      "difficulty": "easy",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 10,
+      "title": "Paginate Results #10",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "easy",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 11,
+      "title": "Select Specific Columns #11",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "easy",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 12,
+      "title": "Filter by Condition #12",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "easy",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 13,
+      "title": "Sort by Date #13",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "easy",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 14,
+      "title": "Count Records #14",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "easy",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 15,
+      "title": "Inner Join #15",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "easy",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 16,
+      "title": "Unique Values #16",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "easy",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 17,
+      "title": "Update Record #17",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "easy",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 18,
+      "title": "Delete Record #18",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "easy",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 19,
+      "title": "Group by Category #19",
+      "description": "Count items in each category.",
+      "difficulty": "easy",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 20,
+      "title": "Paginate Results #20",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "easy",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 21,
+      "title": "Select Specific Columns #21",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "medium",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 22,
+      "title": "Filter by Condition #22",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "medium",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 23,
+      "title": "Sort by Date #23",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "medium",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 24,
+      "title": "Count Records #24",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "medium",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 25,
+      "title": "Inner Join #25",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "medium",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 26,
+      "title": "Unique Values #26",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "medium",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 27,
+      "title": "Update Record #27",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "medium",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 28,
+      "title": "Delete Record #28",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "medium",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 29,
+      "title": "Group by Category #29",
+      "description": "Count items in each category.",
+      "difficulty": "medium",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 30,
+      "title": "Paginate Results #30",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "medium",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 31,
+      "title": "Select Specific Columns #31",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "medium",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 32,
+      "title": "Filter by Condition #32",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "medium",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 33,
+      "title": "Sort by Date #33",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "medium",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 34,
+      "title": "Count Records #34",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "medium",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 35,
+      "title": "Inner Join #35",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "medium",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 36,
+      "title": "Unique Values #36",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "medium",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 37,
+      "title": "Update Record #37",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "medium",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 38,
+      "title": "Delete Record #38",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "medium",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 39,
+      "title": "Group by Category #39",
+      "description": "Count items in each category.",
+      "difficulty": "medium",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 40,
+      "title": "Paginate Results #40",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "medium",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 41,
+      "title": "Select Specific Columns #41",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "medium",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 42,
+      "title": "Filter by Condition #42",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "medium",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 43,
+      "title": "Sort by Date #43",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "medium",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 44,
+      "title": "Count Records #44",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "medium",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 45,
+      "title": "Inner Join #45",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "medium",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 46,
+      "title": "Unique Values #46",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "medium",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 47,
+      "title": "Update Record #47",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "medium",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 48,
+      "title": "Delete Record #48",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "medium",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 49,
+      "title": "Group by Category #49",
+      "description": "Count items in each category.",
+      "difficulty": "medium",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 50,
+      "title": "Paginate Results #50",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "medium",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 51,
+      "title": "Select Specific Columns #51",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "hard",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 52,
+      "title": "Filter by Condition #52",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "hard",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 53,
+      "title": "Sort by Date #53",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "hard",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 54,
+      "title": "Count Records #54",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "hard",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 55,
+      "title": "Inner Join #55",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "hard",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 56,
+      "title": "Unique Values #56",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "hard",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 57,
+      "title": "Update Record #57",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "hard",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 58,
+      "title": "Delete Record #58",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "hard",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 59,
+      "title": "Group by Category #59",
+      "description": "Count items in each category.",
+      "difficulty": "hard",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 60,
+      "title": "Paginate Results #60",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "hard",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 61,
+      "title": "Select Specific Columns #61",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "hard",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 62,
+      "title": "Filter by Condition #62",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "hard",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 63,
+      "title": "Sort by Date #63",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "hard",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 64,
+      "title": "Count Records #64",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "hard",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 65,
+      "title": "Inner Join #65",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "hard",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 66,
+      "title": "Unique Values #66",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "hard",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 67,
+      "title": "Update Record #67",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "hard",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 68,
+      "title": "Delete Record #68",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "hard",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 69,
+      "title": "Group by Category #69",
+      "description": "Count items in each category.",
+      "difficulty": "hard",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 70,
+      "title": "Paginate Results #70",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "hard",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 71,
+      "title": "Select Specific Columns #71",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "hard",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 72,
+      "title": "Filter by Condition #72",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "hard",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 73,
+      "title": "Sort by Date #73",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "hard",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 74,
+      "title": "Count Records #74",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "hard",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 75,
+      "title": "Inner Join #75",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "hard",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 76,
+      "title": "Unique Values #76",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "hard",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 77,
+      "title": "Update Record #77",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "hard",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 78,
+      "title": "Delete Record #78",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "hard",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 79,
+      "title": "Group by Category #79",
+      "description": "Count items in each category.",
+      "difficulty": "hard",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 80,
+      "title": "Paginate Results #80",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "hard",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 81,
+      "title": "Select Specific Columns #81",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "expert",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 82,
+      "title": "Filter by Condition #82",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "expert",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 83,
+      "title": "Sort by Date #83",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "expert",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 84,
+      "title": "Count Records #84",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "expert",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 85,
+      "title": "Inner Join #85",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "expert",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 86,
+      "title": "Unique Values #86",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "expert",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 87,
+      "title": "Update Record #87",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "expert",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 88,
+      "title": "Delete Record #88",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "expert",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 89,
+      "title": "Group by Category #89",
+      "description": "Count items in each category.",
+      "difficulty": "expert",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 90,
+      "title": "Paginate Results #90",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "expert",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    },
+    {
+      "level": 91,
+      "title": "Select Specific Columns #91",
+      "description": "Only retrieve the 'name' and 'email' columns from the users table.",
+      "difficulty": "expert",
+      "concept": "SQL Basics",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT name, email FROM users;"
+    },
+    {
+      "level": 92,
+      "title": "Filter by Condition #92",
+      "description": "Fetch users who are older than 18.",
+      "difficulty": "expert",
+      "concept": "SQL Filtering",
+      "starter_code": "SELECT * FROM users;",
+      "solution_code": "SELECT * FROM users WHERE age > 18;"
+    },
+    {
+      "level": 93,
+      "title": "Sort by Date #93",
+      "description": "Order the posts by created_at in descending order.",
+      "difficulty": "expert",
+      "concept": "SQL Sorting",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts ORDER BY created_at DESC;"
+    },
+    {
+      "level": 94,
+      "title": "Count Records #94",
+      "description": "Get the total number of users in the table.",
+      "difficulty": "expert",
+      "concept": "SQL Aggregation",
+      "starter_code": "SELECT name FROM users;",
+      "solution_code": "SELECT COUNT(*) FROM users;"
+    },
+    {
+      "level": 95,
+      "title": "Inner Join #95",
+      "description": "Join posts with users on the user_id field.",
+      "difficulty": "expert",
+      "concept": "SQL Joins",
+      "starter_code": "SELECT * FROM posts;",
+      "solution_code": "SELECT * FROM posts JOIN users ON posts.user_id = users.id;"
+    },
+    {
+      "level": 96,
+      "title": "Unique Values #96",
+      "description": "Get unique country values from the addresses table.",
+      "difficulty": "expert",
+      "concept": "SQL Distinct",
+      "starter_code": "SELECT country FROM addresses;",
+      "solution_code": "SELECT DISTINCT country FROM addresses;"
+    },
+    {
+      "level": 97,
+      "title": "Update Record #97",
+      "description": "Change the status to 'active' for user with ID 5.",
+      "difficulty": "expert",
+      "concept": "SQL Updates",
+      "starter_code": "UPDATE users SET status = 'active';",
+      "solution_code": "UPDATE users SET status = 'active' WHERE id = 5;"
+    },
+    {
+      "level": 98,
+      "title": "Delete Record #98",
+      "description": "Remove the post with ID 10.",
+      "difficulty": "expert",
+      "concept": "SQL Deletion",
+      "starter_code": "DELETE FROM posts;",
+      "solution_code": "DELETE FROM posts WHERE id = 10;"
+    },
+    {
+      "level": 99,
+      "title": "Group by Category #99",
+      "description": "Count items in each category.",
+      "difficulty": "expert",
+      "concept": "SQL Grouping",
+      "starter_code": "SELECT category, count(*) FROM products;",
+      "solution_code": "SELECT category, count(*) FROM products GROUP BY category;"
+    },
+    {
+      "level": 100,
+      "title": "Paginate Results #100",
+      "description": "Retrieve only the first 5 records.",
+      "difficulty": "expert",
+      "concept": "SQL Limits",
+      "starter_code": "SELECT * FROM activity_logs;",
+      "solution_code": "SELECT * FROM activity_logs LIMIT 5;"
+    }
+  ]
+}

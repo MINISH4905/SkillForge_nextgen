@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillForge — Authenticate</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Auth Specialized Style -->
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <h1 style="color: var(--primary);">AUTHENTICATE</h1>
+            <p>RESUME YOUR MASTERY JOURNEY</p>
+        </div>
+        
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="auth-btn">ENTRY &raquo;</button>
+        </form>
+        
+        <div class="auth-footer">
+            NEW TO THE FORGE? <a href="{% url 'accounts:signup' %}">CREATE ACCOUNT</a>
+        </div>
+    </div>
+
+</body>
+</html>
