@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<!-- Special SPA Styles for Learner (Integrated with Design System) -->
+<link rel="stylesheet" href="{% static 'css/remediation_styles.css' %}" />
+<style>
+    .view { display: none; }
+    .view.active { display: block; animation: slideUp 0.4s cubic-bezier(0, 0, 0.2, 1); }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Custom SPA Metrics */
+    .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .metric-card { 
+        background: var(--bg-surface); 
+        border: 1px solid var(--border); 
+        padding: 1.5rem; 
+        border-radius: var(--radius-lg); 
+        text-align: center;
+        transition: transform var(--transition-base);
+    }
+    .metric-card:hover { transform: translateY(-4px); }
+    .metric-value { font-size: 2rem; font-weight: 800; color: var(--primary); font-family: var(--font-heading); }
+    .metric-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; font-weight: 700; }
+
+    /* Domain Mastery Grid */
+    .mastery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+    .mastery-card { background: var(--bg-surface); border: 1px solid var(--border); padding: 1.5rem; border-radius: var(--radius-lg); }
+    .progress-track { background: var(--bg-base); height: 8px; border-radius: 4px; overflow: hidden; margin: 12px 0; border: 1px solid var(--border); }
+    .progress-fill { height: 100%; background: var(--primary); transition: width 0.8s ease-in-out; }
+
+    /* Toast Notifications */
+    #toast-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; display: flex; flex-direction: column; gap: 0.75rem; }
+    .toast { 
+        background: var(--bg-surface); 
+        border: 1px solid var(--border); 
+        padding: 12px 24px; 
+        border-radius: var(--radius-md); 
+        box-shadow: var(--shadow-lg); 
+        font-size: 0.9rem; 
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        animation: toastIn 0.3s ease-out;
+    }
+    @keyframes toastIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    .toast-success { border-left: 4px solid var(--success); color: var(--text-primary); }
+    .toast-error { border-left: 4px solid var(--danger); color: var(--text-primary); }
+
+    /* Application Loading */
+    #loading-overlay { position: fixed; inset: 0; background: var(--bg-base); z-index: 2000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.5rem; transition: opacity 0.5s; }
+    .forge-spinner { width: 48px; height: 48px; border: 4px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Global App Loading -->
+<div id="loading-overlay">
+    <div class="forge-spinner"></div>
+    <div class="text-muted font-08 uppercase ls-lg text-bold">Initialising Mastery Runtime...</div>
+</div>
+
+<!-- View: Home / Dashboard -->
+<div id="view-home" class="view active">
+    <header class="mb-8 d-flex justify-between align-center">
+        <div>
+            <h1 class="mb-2">Economic Dashboard</h1>
+            <p class="text-secondary font-1">Welcome back, architect. Your technical trajectory is nominal.</p>
+        </div>
+        <div class="d-flex align-center gap-6">
+            <div class="text-right">
+                <div id="sidebar-username" class="text-primary text-bold font-1 mr-4">{{ user.username }}</div>
+                <div class="text-muted font-075 uppercase ls-md">Active Identity</div>
+            </div>
+            <div id="sidebar-xp" class="badge badge-primary font-09 p-4 radius-md" style="font-size: 1rem; padding: 0.75rem 1.5rem;">0 XP</div>
+        </div>
+    </header>
+
+    <div class="metric-grid mb-8">
+        <div class="metric-card"><div class="metric-value text-brand" id="stat-xp">—</div><div class="metric-label">CUMULATIVE XP</div></div>
+        <div class="metric-card"><div class="metric-value" id="stat-lives" style="color: var(--danger);">—</div><div class="metric-label">SURVIVABILITY LIVES</div></div>
+        <div class="metric-card"><div class="metric-value" id="stat-streak" style="color: var(--warn);">—</div><div class="metric-label">SYNCHRONISATION STREAK</div></div>
+        <div class="metric-card"><div class="metric-value" id="stat-coins" style="color: #fbbf24;">—</div><div class="metric-label">FORGE TOKENS</div></div>
+    </div>
+
+    <div class="mb-4">
+        <h3 class="mb-6 font-1">Registry Proficiency Breakdown</h3>
+        <div class="mastery-grid mb-8" id="domain-grid">
+            <p class="text-muted">Synchronizing registry data...</p>
+        </div>
+    </div>
+
+    <button class="btn btn-secondary w-full py-4 text-brand text-bold" onclick="Nav.goTo('remediation')">
+        Launch Remediation Blueprint Protocol →
+    </button>
+</div>
+
+<!-- View: Quest Engine -->
+<div id="view-quest" class="view">
+    <header class="mb-8">
+        <h1 class="mb-2">Quest Engine</h1>
+        <p class="text-secondary font-1">Engage autonomous challenges to harden your technical competencies.</p>
+    </header>
+    
+    <div class="card p-8 mb-6 text-center" style="background: var(--bg-sidebar);">
+        <button class="btn btn-primary btn-lg px-8 py-4" id="btn-next-quest">
+            Execute Proactive Challenge Calculation →
+        </button>
+    </div>
+
+    <div id="quest-area" class="mt-8"></div>
+</div>
+
+<!-- View: Remediation Logic -->
+<div id="view-remediation" class="view"></div>
+
+<!-- Unified Toast Runtime -->
+<div id="toast-container"></div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Core Application State & Logic -->
+<script src="{% static 'js/store.js' %}"></script>
+<script src="{% static 'js/section_library.js' %}"></script>
+<script src="{% static 'js/plan_generator.js' %}"></script>
+<script src="{% static 'js/progress_tracker.js' %}"></script>
+<script src="{% static 'js/api.js' %}"></script>
+<script src="{% static 'js/remediation_screen.js' %}"></script>
+
+<script>
+window.GSDS_API_BASE = '/learner';
+
+const Toast = {
+    show(msg, type = 'info', duration = 4000) {
+        const el = document.createElement('div');
+        el.className = `toast toast-${type}`;
+        el.innerHTML = `<span>${type === 'success' ? '✓' : '✖'}</span> ${msg}`;
+        document.getElementById('toast-container').appendChild(el);
+        setTimeout(() => { 
+            el.style.opacity = '0'; 
+            el.style.transform = 'translateY(-20px)';
+            setTimeout(() => el.remove(), 400); 
+        }, duration);
+    },
+    success(msg) { this.show(msg, 'success'); },
+    error(msg) { this.show(msg, 'error', 6000); }
+};
+window.Toast = Toast;
+
+const Nav = {
+    current: 'home',
+    goTo(viewId) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('.nav-spa').forEach(n => n.classList.remove('active'));
+
+        const viewEl = document.getElementById('view-' + viewId);
+        if (viewEl) viewEl.classList.add('active');
+
+        const navEl = document.querySelector(`.nav-spa[data-view="${viewId}"]`);
+        if (navEl) navEl.classList.add('active');
+
+        Nav.current = viewId;
+        if (viewId === 'remediation') {
+            if (typeof Remediation !== 'undefined') Remediation.init();
+        }
+    }
+};
+window.Nav = Nav;
+
+// Synchronize Global Sidebar with SPA Navigation
+document.querySelectorAll('.nav-spa').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const view = btn.dataset.view;
+        if (view) {
+            e.preventDefault();
+            Nav.goTo(view);
+        }
+    });
+});
+
+const domainLabels = { web: 'Web Systems', dsa: 'Algorithmic Pure', database: 'Data Structures', aiml: 'Cognitive Engine', sysdesign: 'Macro Architect' };
+
+function renderDashboard(profile, domains) {
+    document.getElementById('stat-xp').textContent = profile.xp_total.toLocaleString();
+    document.getElementById('stat-lives').textContent = profile.lives;
+    document.getElementById('stat-streak').textContent = profile.streak_days;
+    document.getElementById('stat-coins').textContent = profile.coins;
+    
+    document.getElementById('sidebar-xp').textContent = profile.xp_total.toLocaleString() + ' XP';
+
+    const grid = document.getElementById('domain-grid');
+    if (domains && domains.length) {
+        grid.innerHTML = domains.map(d => `
+            <div class="mastery-card">
+                <div class="d-flex justify-between align-center mb-2">
+                    <span class="text-primary text-bold font-09">${domainLabels[d.domain] || d.domain}</span>
+                    <span class="text-muted font-075 uppercase ls-sm">Registry ${d.tier}</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill" style="width:${d.competency_score}%"></div></div>
+                <div class="d-flex justify-between font-075 mt-2">
+                    <span class="text-muted">PROFICIENCY</span>
+                    <span class="text-brand text-bold">${d.competency_score}%</span>
+                </div>
+            </div>
+        `).join('');
+    } else {
+        grid.innerHTML = '<div class="card w-full text-center p-8 text-muted font-09">No architectural footprints detected. Engage quest engine.</div>';
+    }
+}
+
+document.getElementById('btn-next-quest').addEventListener('click', async () => {
+    try {
+        const quest = await API.fetchNextQuest();
+        Toast.success(`Autonomous Quest Synchronised: ${quest.title}`);
+        document.getElementById('quest-area').innerHTML = `
+            <div class="card p-8 border-t-primary shadow-lg">
+                <div class="text-brand uppercase font-075 ls-lg mb-2">${quest.domain} • REGISTRY TIER ${quest.tier}</div>
+                <h2 class="mb-4">${quest.title}</h2>
+                <button class="btn btn-primary px-6" onclick="startQuestById(${quest.id})">Establish Operational Link →</button>
+            </div>
+        `;
+    } catch (err) { Toast.error(err.message); }
+});
+
+window.startQuestById = async (taskId) => {
+    try {
+        const session = await API.startQuest(taskId);
+        Toast.success('Operational link established. Runtime engaged.');
+    } catch (err) { Toast.error(err.message); }
+};
+
+async function initApp() {
+    try {
+        const learnerId = '{{ user.username }}';
+        Store.update({ learner_id: learnerId });
+        const [profile, domains] = await Promise.all([API.fetchProfile(), API.fetchDomains()]);
+        renderDashboard(profile, domains);
+        Toast.success('Mastery Runtime Synchronized √');
+    } catch (err) {
+        Toast.error('Backend synchronisation failure. Running in offline cache.');
+    }
+    const overlay = document.getElementById('loading-overlay');
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.remove(), 500);
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
+</script>
+{% endblock %}

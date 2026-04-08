@@ -93,9 +93,11 @@ body {
     color: var(--text-muted);
 }
 
-.auth-footer a {
-    color: var(--primary);
-    font-weight: 800;
-    text-decoration: none;
-    margin-left: 5px;
-}
+.auth-header h1.primary { color: var(--primary); }
+.auth-header h1.success { color: #10b981; }
+
+.auth-btn.success { background: #10b981; }
+
+.auth-footer a.success { color: #10b981; }
+
+.border-success { border-color: #10b981; }

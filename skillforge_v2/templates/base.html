@@ -1,49 +1,136 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkillForge V2 — Infinite Mastery</title>
+    <title>SkillForge ⚔️ — Infinite Mastery</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=JetBrains+Mono&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
     
-    <!-- Custom Style System -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- Design System & Components -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.css' %}">
+    
+    <!-- Theme Engine (Load early to prevent FOUC) -->
+    <script src="{% static 'js/theme.js' %}"></script>
+    
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="{% url 'dashboard:home' %}" style="text-decoration: none;">
-            <h1>SkillForge ⚔️</h1>
-        </a>
-        <div class="nav-links">
-            {% if user.is_authenticated %}
-                <a href="{% url 'dashboard:home' %}">Domains</a>
-                <a href="{% url 'rewards:leaderboard' %}">Leaderboard</a>
-                <a href="{% url 'dashboard:progress' %}">My Progress</a>
-                <span style="color: var(--text-muted);">|</span>
-                <span>Welcome, {{ user.username }}</span>
-                <form action="{% url 'accounts:logout' %}" method="post" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="btn" style="padding: 0.3rem 0.7rem; font-size: 0.9rem;">Logout</button>
-                </form>
-            {% else %}
-                <a href="{% url 'accounts:login' %}">Login</a>
-                <a href="{% url 'accounts:signup' %}" class="btn">Sign Up</a>
-            {% endif %}
-        </div>
-    </nav>
+    <div id="app-layout">
+        
+        <!-- ── Sidebar ──────────────────────────────────────────────── -->
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="logo">
+                    Skill<span>Forge</span> ⚔️
+                </a>
+            </div>
 
-    <div class="container">
-        {% block content %}{% endblock %}
+            <nav class="sidebar-nav">
+                {% if user.is_authenticated %}
+                    <div class="nav-section">
+                        <div class="nav-label">Core</div>
+                        <a href="{% url 'dashboard:home' %}" class="nav-link {% if request.resolver_match.app_name == 'dashboard' and request.resolver_match.url_name == 'home' %}active{% endif %}">
+                            <span class="nav-icon">🏠</span> <span>Domain</span>
+                        </a>
+                        <a href="{% url 'rewards:leaderboard' %}" class="nav-link {% if request.resolver_match.app_name == 'rewards' %}active{% endif %}">
+                            <span class="nav-icon">🏆</span> <span>Leaderboard</span>
+                        </a>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-label">Progression</div>
+                        <!-- Learner SPA Link -->
+                        <a href="{% url 'learner:dashboard' %}" class="nav-link nav-spa {% if request.resolver_match.app_name == 'learner' %}active{% endif %}" data-view="home">
+                            <span class="nav-icon">⚔️</span> <span>Quests Engine</span>
+                        </a>
+                        <a href="{% url 'dashboard:progress' %}" class="nav-link {% if request.resolver_match.app_name == 'dashboard' and request.resolver_match.url_name == 'progress' %}active{% endif %}">
+                            <span class="nav-icon">📊</span> <span>My Statistics</span>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="nav-section">
+                        <div class="nav-label">Authentication</div>
+                        <a href="{% url 'accounts:login' %}" class="nav-link">
+                            <span class="nav-icon">🔑</span> <span>Sign In</span>
+                        </a>
+                        <a href="{% url 'accounts:signup' %}" class="nav-link">
+                            <span class="nav-icon">📝</span> <span>Registration</span>
+                        </a>
+                    </div>
+                {% endif %}
+            </nav>
+
+            <div class="sidebar-footer">
+                {% if user.is_authenticated %}
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-center gap-3">
+                            <div style="width:32px; height:32px; background:var(--primary); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:800; font-size:0.75rem;">
+                                {{ user.username|first|upper }}
+                            </div>
+                            <div class="flex-1 overflow-hidden">
+                                <div class="text-primary text-bold font-085">{{ user.username }}</div>
+                                <div class="text-muted font-075 uppercase ls-sm">Active Member</div>
+                            </div>
+                        </div>
+                        <form action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-secondary w-full btn-sm">
+                                Sign Out
+                            </button>
+                        </form>
+                    </div>
+                {% endif %}
+            </div>
+        </aside>
+
+        <!-- ── Main Area ────────────────────────────────────────────── -->
+        <div id="main-content">
+            
+            <!-- Top Header -->
+            <header id="top-header">
+                <div>
+                    <!-- Mobile Hamburger (Hidden on desktop) -->
+                    <button class="theme-toggle" style="display:none;" id="sidebar-toggle">☰</button>
+                </div>
+                
+                <div class="d-flex align-center gap-4">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                        <span id="theme-icon-dark">🌙</span>
+                        <span id="theme-icon-light" class="hidden">☀️</span>
+                    </button>
+                    {% if user.is_authenticated %}
+                        <div class="badge badge-primary">Level {{ user.id|add:10 }}</div>
+                    {% endif %}
+                </div>
+            </header>
+
+            <!-- Content Container -->
+            <main class="container py-8">
+                {% block content %}{% endblock %}
+            </main>
+
+        </div>
+
     </div>
 
-    <!-- Custom Scripts -->
-    <script src="{% static 'js/app.js' %}"></script>
+    <!-- ── Scripts ────────────────────────────────────────────────── -->
+    <script>
+        // Simple Mobile Sidebar Toggle logic (if needed)
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        if (sidebarToggle) {
+            sidebarToggle.onclick = () => sidebar.classList.toggle('open');
+        }
+    </script>
+    
+    {% block extra_js %}{% endblock %}
 
 </body>
 </html>

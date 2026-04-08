@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container max-width-600">
+    <div class="card border-t-primary">
+        <h2 class="mb-2">Learner Profile Settings</h2>
+        <form action="{% url 'learner:profile_settings' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="stat-label">Bio (Short Description)</label>
+                <textarea name="bio" class="form-control mt-05" placeholder="Tell us about your learning goals...">{{ profile.bio|default:"" }}</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label class="stat-label">GitHub URL</label>
+                <input type="url" name="github_url" class="form-control mt-05" value="{{ profile.github_url|default:'' }}" placeholder="https://github.com/username">
+            </div>
+
+            <div class="form-group">
+                <label class="stat-label">LinkedIn URL</label>
+                <input type="url" name="linkedin_url" class="form-control mt-05" value="{{ profile.linkedin_url|default:'' }}" placeholder="https://linkedin.com/in/username">
+            </div>
+
+            <div class="form-group">
+                <label class="stat-label">Preferred Learning Domain</label>
+                <select name="preferred_domain" class="form-control mt-05">
+                    <option value="">-- Select One --</option>
+                    {% for domain in domains %}
+                    <option value="{{ domain.id }}" {% if profile.preferred_domain.id == domain.id %}selected{% endif %}>{{ domain.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="d-flex justify-between align-center mt-2">
+                <a href="{% url 'learner:dashboard' %}" class="btn btn-secondary">&laquo; Back to Dashboard</a>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

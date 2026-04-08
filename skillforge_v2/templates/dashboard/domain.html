@@ -1,43 +1,82 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="card" style="text-align: center; border-top: 5px solid var(--primary); padding: 3rem 1.5rem;">
-    <div style="font-size: 3rem; margin-bottom: 1rem;">
-        {% if domain.name == 'Frontend' %}🎨{% elif domain.name == 'Backend' %}⚙️{% elif domain.name == 'DSA' %}🧠{% elif domain.name == 'SQL' %}📊{% else %}🛡️{% endif %}
+<header class="mb-8">
+    <div class="d-flex justify-between align-end mb-2">
+        <div>
+            <div class="d-flex align-center gap-3 mb-2">
+                <span style="font-size: 2rem;">{% if domain.name == 'Frontend' %}🎨{% elif domain.name == 'Backend' %}⚙️{% elif domain.name == 'DSA' %}🧠{% elif domain.name == 'SQL' %}📊{% else %}🛡️{% endif %}</span>
+                <h1 class="m-0">{{ domain.name }} Mastery</h1>
+            </div>
+            <p class="text-secondary font-1">Current Progress: <span class="text-brand text-bold">Module {{ current_level_num }}/100</span></p>
+        </div>
+        <a href="{% url 'dashboard:home' %}" class="btn btn-secondary">
+            ← Registry
+        </a>
     </div>
-    <h2 style="color: var(--primary); margin: 0; font-family: 'Outfit'; font-weight: 900; font-size: 2.2rem;">{{ domain.name|upper }} MASTERY</h2>
-    <p style="color: var(--text-muted); margin-bottom: 2rem;">Journey through 100 levels of specialized challenges.</p>
-    
-    <div style="max-width: 600px; margin: 0 auto;">
-        <!-- Progress Bar -->
-        <div style="background: #222; height: 12px; border-radius: 10px; overflow: hidden; margin-bottom: 0.5rem; border: 1px solid #333;">
-            <div style="background: linear-gradient(90deg, var(--primary), #818cf8); height: 100%; width: {{ current_level_num }}%; transition: width 1s ease-out;"></div>
-        </div>
-        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); font-weight: bold; margin-bottom: 2.5rem;">
-            <span>Level 0</span>
-            <span style="color: var(--primary);">{{ current_level_num }}% COMPLETE</span>
-            <span>Mastery</span>
-        </div>
+</header>
 
-        <div style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); margin-bottom: 2rem;">
-            {% if is_completed %}
-                <h3 style="color: var(--success); margin-top: 0;">🏆 Domain Mastered!</h3>
-                <p style="font-size: 0.95rem;">You have conquered all 100 levels of {{ domain.name }}. Your expertise is undeniable.</p>
-                <a href="{% url 'dashboard:home' %}" class="btn" style="margin-top: 1rem;">Back to Domains</a>
-            {% else %}
-                {% if current_level_obj %}
-                    <span style="color: var(--primary); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Currently At</span>
-                    <h3 style="margin: 0.5rem 0 1.5rem 0; font-size: 1.5rem;">Level {{ current_level_num }}: {{ current_level_obj.title }}</h3>
-                    
-                    <div style="display: flex; justify-content: center; gap: 1rem;">
-                        <a href="{% url 'dashboard:level' current_level_obj.id %}" class="btn" style="padding: 1rem 2.5rem; font-size: 1rem; box-shadow: 0 4px 15px var(--primary-glow);">
-                            Resume Journey &raquo;
-                        </a>
-                    </div>
-                {% else %}
-                    <p style="color: var(--text-muted);">Initial levels are being forged by the AI. Check back soon!</p>
-                {% endif %}
-            {% endif %}
+<div class="grid grid-cols-2">
+    <!-- Active Module -->
+    <div class="card d-flex flex-column">
+        <h3 class="card-title text-muted uppercase ls-md font-075 mb-4">Active Logic Module</h3>
+        
+        {% if is_completed %}
+            <div class="text-center p-8">
+                <div style="font-size: 3.5rem; margin-bottom: 1rem;">👑</div>
+                <h2 class="mb-2">Domain Conquered</h2>
+                <p class="text-secondary mb-6">You've successfully validated every architectural pattern in this domain.</p>
+                <a href="{% url 'dashboard:home' %}" class="btn btn-secondary w-full">Explore Other Registries</a>
+            </div>
+        {% elif current_level_obj %}
+            <div class="p-6 mb-6 radius-md" style="background: var(--bg-base); border: 1px solid var(--border);">
+                <div class="d-flex justify-between align-center mb-2">
+                    <span class="text-muted font-08 text-bold uppercase ls-sm">MODULE {{ current_level_num }}</span>
+                    <span class="badge badge-primary">ACTIVE</span>
+                </div>
+                <h2 class="m-0 font-15">{{ current_level_obj.title }}</h2>
+            </div>
+            
+            <p class="text-secondary mb-8 font-095">This module requires rigorous implementation of core principles. Proceed to verification engine?</p>
+            
+            <div class="mt-auto">
+                <a href="{% url 'dashboard:level' current_level_obj.id %}" class="btn btn-primary w-full">
+                    Launch Module Engines →
+                </a>
+            </div>
+        {% else %}
+            <div class="text-center p-8">
+                <p class="text-muted">No modules available in current registry.</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Analytics Dashboard -->
+    <div class="card">
+        <h3 class="card-title text-muted uppercase ls-md font-075 mb-4">Domain Analytics</h3>
+        <div class="d-flex flex-column gap-4">
+            <div class="d-flex justify-between align-center p-4 radius-md" style="background: var(--bg-base); border: 1px solid var(--border);">
+                <span class="text-muted font-08 text-bold uppercase">COMPLETION</span>
+                <span class="text-brand text-800 font-12">{{ current_level_num }}%</span>
+            </div>
+            <div class="d-flex justify-between align-center p-4 radius-md" style="background: var(--bg-base); border: 1px solid var(--border);">
+                <span class="text-muted font-08 text-bold uppercase">ARCHITECT RANK</span>
+                <span class="badge badge-success">SENIOR</span>
+            </div>
+            <div class="d-flex justify-between align-center p-4 radius-md" style="background: var(--bg-base); border: 1px solid var(--border);">
+                <span class="text-muted font-08 text-bold uppercase">ACCUMULATED XP</span>
+                <span class="text-primary text-bold font-12">{% widthratio current_level_num 1 50 %} <small class="text-muted font-075">POINTS</small></span>
+            </div>
+        </div>
+        
+        <div class="mt-8 pt-6" style="border-top:1px solid var(--border);">
+            <div class="d-flex justify-between mb-2 font-08 text-secondary">
+                <span>Mastery Progress</span>
+                <span>{{ current_level_num }}%</span>
+            </div>
+            <div style="height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;">
+                <div style="height: 100%; background: var(--primary); width: {{ current_level_num }}%;"></div>
+            </div>
         </div>
     </div>
 </div>

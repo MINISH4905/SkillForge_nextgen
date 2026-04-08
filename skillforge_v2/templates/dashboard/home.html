@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2 style="margin-bottom: 2rem;">Available Domains</h2>
+<h2 class="mb-2">Available Domains</h2>
 
 <div class="grid">
     {% for domain in domains %}
-    <a href="{% url 'dashboard:domain' domain.id %}" class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+    <a href="{% url 'dashboard:domain' domain.id %}" class="card domain-card">
         <div>
-            <h3 style="margin-top: 0; display: flex; align-items: center; gap: 10px;">
+            <h3 class="mt-0 d-flex align-center gap-1">
                 {{ domain.name }} 
-                <span style="font-size: 1.2rem;">{% if domain.name == 'Frontend' %}🎨{% elif domain.name == 'Backend' %}⚙️{% elif domain.name == 'DSA' %}🧠{% elif domain.name == 'SQL' %}📊{% else %}🛡️{% endif %}</span>
+                <span class="domain-icon">{% if domain.name == 'Frontend' %}🎨{% elif domain.name == 'Backend' %}⚙️{% elif domain.name == 'DSA' %}🧠{% elif domain.name == 'SQL' %}📊{% else %}🛡️{% endif %}</span>
             </h3>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">Master infinite challenges in {{ domain.name }}. Track your progress and earn XP.</p>
+            <p class="text-muted font-085">Master infinite challenges in {{ domain.name }}. Track your progress and earn XP.</p>
         </div>
-        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 0.75rem; color: var(--primary); font-weight: bold; text-transform: uppercase;">100 Levels Available</span>
-            <span class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;">Enter &raquo;</span>
+        <div class="mt-1 d-flex justify-between align-center">
+            <span class="text-primary text-bold upper font-075">100 Levels Available</span>
+            <span class="btn btn-enter">Enter &raquo;</span>
         </div>
     </a>
     {% empty %}
-    <div class="card" style="grid-column: 1 / -1; text-align: center;">
+    <div class="card text-center grid-col-all">
         <p>No domains available. Please ask an admin to seed the database.</p>
     </div>
     {% endfor %}

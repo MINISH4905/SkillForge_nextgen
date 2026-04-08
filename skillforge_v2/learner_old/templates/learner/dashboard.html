@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="learner-dashboard container">
+    <div class="league-header">
+        <span class="league-tag">Learning Journey</span>
+        <h1 class="league-title">Welcome back, {{ user.username }}</h1>
+        <p class="league-subtitle">Your mission: Master every domain in SkillForge.</p>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="user-stats-bar">
+        <div class="stat-item">
+            <span class="stat-label">Current XP</span>
+            <span class="stat-value">{{ total_xp }} <small>XP</small></span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-label">Global Rank</span>
+            <span class="stat-value">#{{ rank }}</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <span class="stat-label">Average Completion</span>
+            <span class="stat-value">72%</span> <!-- Static for now -->
+        </div>
+    </div>
+
+    <div class="grid grid-progress">
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <h3 class="mb-15">Domain Mastery</h3>
+            <div class="grid">
+                {% for p in progresses %}
+                <div class="card domain-card">
+                    <div class="d-flex justify-between align-center mb-1">
+                        <h4 class="m-0">{{ p.domain.name }}</h4>
+                        <span class="badge">Level {{ p.current_level }}/100</span>
+                    </div>
+                    <div class="progress-container mb-1">
+                        <div class="progress-fill" style="width:{{ p.current_level }}%"></div>
+                    </div>
+                    <a href="{% url 'dashboard:domain' p.domain.id %}" class="btn btn-small btn-secondary">Resume</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Sidebar Section -->
+        <div class="sidebar-section">
+            <div class="card small-card">
+                <h4 class="mt-0 mb-1">Active Goals</h4>
+                {% if goals %}
+                    {% for goal in goals %}
+                    <div class="goal-item mb-1 pb-1 border-divider">
+                        <p class="m-0 font-085 text-bold">Level {{ goal.target_level }} in {{ goal.domain.name }}</p>
+                        <p class="m-0 font-075 text-muted">Deadline: {% if goal.deadline %}{{ goal.deadline }}{% else %}ASAP{% endif %}</p>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted font-075 italic">No active goals. Set one today!</p>
+                {% endif %}
+                <button class="btn btn-enter w-100 mt-05" onclick="document.getElementById('goalModal').style.display='flex'">Set New Goal</button>
+            </div>
+
+            <div class="card small-card">
+                <h4 class="mt-0 mb-1">Recent Achievements</h4>
+                {% if badges %}
+                    {% for ub in badges %}
+                    <div class="achievement-row mb-05 p-05 font-085">
+                        <span class="badge bg-primary text-white">🏆</span>
+                        <div class="flex-1">
+                            <p class="m-0 text-bold">{{ ub.badge.name }}</p>
+                            <p class="m-0 font-075 text-muted">{{ ub.awarded_at|date }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-muted font-075 italic">Begin your journey to earn badges.</p>
+                {% endif %}
+            </div>
+
+            <div class="card small-card">
+                <h4 class="mt-0 mb-1">Quick Links</h4>
+                <a href="{% url 'learner:profile_settings' %}" class="btn btn-enter btn-secondary w-100 mb-05">Edit Profile</a>
+                <a href="{% url 'leaderboard' %}" class="btn btn-enter btn-secondary w-100">Leaderboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Simple Goal Modal (Hidden by default) -->
+<div id="goalModal" class="d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center;">
+    <div class="card max-width-600" style="background: var(--bg-surface); width: 90%;">
+        <h3 class="mb-2">New Learning Goal</h3>
+        <form action="{% url 'learner:add_goal' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="stat-label">Target Domain</label>
+                <select name="domain" class="form-control mt-05">
+                    {% for p in progresses %}
+                    <option value="{{ p.domain.id }}">{{ p.domain.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="stat-label">Target Level (1-100)</label>
+                <input type="number" name="target_level" class="form-control mt-05" value="50" min="1" max="100">
+            </div>
+            <div class="d-flex gap-1 justify-end">
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('goalModal').style.display='none'">Cancel</button>
+                <button type="submit" class="btn btn-primary">Set Goal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .goal-item:last-child { border: none; }
+    #goalModal.d-flex { display: flex !important; }
+</style>
+{% endblock %}

@@ -1,105 +1,240 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+    /* Critical Alignment Overrides for Editor View */
+    .editor-layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 2rem;
+        align-items: start;
+        height: calc(100vh - var(--header-height) - 4rem);
+    }
+    .editor-workspace {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        height: 100%;
+    }
+    #codeEditor {
+        flex: 1;
+        min-height: 400px;
+        background: var(--bg-surface);
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        outline: none;
+        resize: none;
+        transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    }
+    #codeEditor:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-dim); }
+    .terminal {
+        background: #000;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        border-radius: var(--radius-md);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid var(--border);
+    }
+</style>
+{% endblock %}
 
 {% block content %}
-<div style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start;" 
+<div class="editor-layout" 
      data-level-id="{{ level.id }}" 
      data-domain="{{ level.domain.name }}" 
      data-csrf="{{ csrf_token }}">
     
-    <!-- Main Content -->
-    <div class="card" style="margin-top: 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h2 style="margin: 0; color: var(--primary);">Level {{ level.level_number }}: {{ level.title }}</h2>
-            <span class="badge" style="background: var(--success);">{{ level.difficulty|title }}</span>
+    <!-- Main Workspace -->
+    <div class="editor-workspace">
+        <header class="d-flex justify-between align-center">
+            <div>
+                <h2 class="m-0 text-primary font-15">Module {{ level.level_number }}: {{ level.title }}</h2>
+                <div class="d-flex align-center gap-4 mt-2">
+                    <span class="badge badge-primary uppercase ls-sm">{{ level.difficulty }}</span>
+                    <span class="text-muted font-08">Logic Verification Engine v4.0</span>
+                </div>
+            </div>
+            <div class="d-flex gap-4">
+                <a href="{% url 'dashboard:domain' level.domain.id %}" class="btn btn-secondary">
+                    ← Registry
+                </a>
+                <button id="runBtn" onclick="triggerEvaluation()" class="btn btn-primary shadow-lg">
+                    <span id="runBtnText">Run Validation →</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Technical Specs Card -->
+        <div class="card p-4" style="background: var(--primary-dim); border-color: var(--primary);">
+            <div class="d-flex align-center gap-3 mb-2">
+                <span class="text-brand">⚡</span>
+                <h4 class="m-0 text-brand uppercase font-075 ls-lg">Operational Objective</h4>
+            </div>
+            <p class="text-secondary font-095 m-0">{{ level.description }}</p>
         </div>
-        <hr style="border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0;">
 
-        <div style="margin-bottom: 2rem;">
-            <h4>Concept:</h4>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">{{ level.concept }}</p>
-
-            <h4>Task:</h4>
-            <p>{{ level.description }}</p>
-        </div>
-
-        <!-- Code Editor Section -->
-        <div class="editor-container" style="background: #111; border-radius: 8px; border: 1px solid #333; overflow: hidden; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-            <div style="background: #222; padding: 0.5rem 1rem; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #888;">editor.{{ level.domain.name|lower }}</span>
-                <div style="display: flex; gap: 6px;">
+        <!-- Editor Section -->
+        <div class="flex-1 d-flex flex-column overflow-hidden">
+            <div class="d-flex justify-between align-center px-4 py-2" style="background: var(--bg-sidebar); border: 1px solid var(--border); border-bottom: none; border-radius: var(--radius-md) var(--radius-md) 0 0;">
+                <span class="font-mono font-075 text-muted uppercase">src/{{ level.domain.name|lower }}/implementation.forge</span>
+                <div class="d-flex gap-2">
                     <div style="width: 10px; height: 10px; border-radius: 50%; background: #ff5f56;"></div>
                     <div style="width: 10px; height: 10px; border-radius: 50%; background: #ffbd2e;"></div>
                     <div style="width: 10px; height: 10px; border-radius: 50%; background: #27c93f;"></div>
                 </div>
             </div>
-            <textarea id="codeEditor" 
-                      style="width: 100%; height: 250px; background: transparent; color: #d4d4d4; border: none; padding: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; line-height: 1.5; outline: none; resize: vertical; tab-size: 4;"
-                      spellcheck="false">{{ level.starter_code|default:"// Write your code here..." }}</textarea>
+            <textarea id="codeEditor" spellcheck="false">{{ level.starter_code|default:"// Initialize architectural patterns..." }}</textarea>
         </div>
 
-        <!-- Terminal/Output Section -->
-        <div id="console" style="display: none; background: #0a0a0a; border: 1px solid #222; border-radius: 6px; padding: 1rem; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem;">
-            <div id="consoleHeader" style="color: #666; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.2rem;">&rsaquo;</span> Execution Result
-            </div>
-            <div id="consoleBody" style="color: #eee;"></div>
-        </div>
-
-        <div style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center;">
-            <a href="{% url 'dashboard:domain' level.domain.id %}" class="btn" style="background: transparent; color: var(--text-muted); border: 1px solid #444;">&laquo; Back</a>
-            
-            <div style="display: flex; gap: 1rem;">
-                <button id="runBtn" onclick="triggerEvaluation()" class="btn btn-primary" style="padding: 0.8rem 2rem; display: flex; align-items: center; gap: 10px;">
-                    <span id="runBtnText">Run & Evaluate</span>
-                    <span id="runBtnLoader" style="display: none; width: 14px; height: 14px; border: 2px solid #fff; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
-                </button>
-            </div>
+        <!-- Terminal -->
+        <div id="console" class="terminal hidden">
+            <div class="text-muted mb-2 uppercase font-07 ls-md">System Kernel Output</div>
+            <div id="consoleBody" style="white-space: pre-wrap;"></div>
         </div>
     </div>
 
-    <!-- Sidebar: Hints & Powers -->
-    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-        <!-- Hints Card -->
-        <div class="card" style="margin: 0; padding: 1.2rem;">
-            <h4 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">
-                <span>💡</span> Hints
-            </h4>
-            <div id="hintList" style="margin: 1rem 0;">
-                <!-- Hints injected by JS -->
+    <!-- Sidebar Documentation & Assistance -->
+    <aside class="d-flex flex-column gap-6">
+        <div class="card">
+            <h4 class="card-title text-muted uppercase ls-md font-075 mb-3">Architectural Brief</h4>
+            <p class="text-secondary font-09 m-0">{{ level.concept }}</p>
+        </div>
+
+        <div class="card">
+            <h4 class="card-title text-muted uppercase ls-md font-075 mb-4">Assistance Protocols</h4>
+            <div id="hintList" class="d-flex flex-column gap-3 mb-4">
+                <!-- Hints injected -->
             </div>
             <button id="hintBtn" onclick="unlockHint('{{ level.id }}', '{{ csrf_token }}')" 
-                    class="btn btn-secondary" style="width: 100%; display: none; font-size: 0.85rem;">
-                Get Next Hint <span id="hintBtnCost" style="opacity: 0.7; margin-left: 4px;"></span>
+                    class="btn btn-secondary w-full hidden font-08">
+                Request Protocol Guidance <span id="hintBtnCost" class="text-muted ml-2"></span>
             </button>
         </div>
 
-        <!-- Powers Card -->
-        <div class="card" style="margin: 0; padding: 1.2rem;">
-            <h4 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">
-                <span>⚡</span> My Powers
-            </h4>
-            <div id="powerList" style="margin: 1rem 0;">
-                <!-- Powers injected by JS -->
+        <div class="card">
+            <h4 class="card-title text-muted uppercase ls-md font-075 mb-4">Tactical Powers</h4>
+            <div id="powerList" class="d-flex flex-column gap-2">
+                <!-- Powers injected -->
             </div>
-            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0;">
-                Purchase powers in the Shop for XP.
-            </p>
         </div>
-    </div>
+    </aside>
 </div>
 
+{% block extra_js %}
 <script>
-    // Transfer data attributes to body for JS access
-    document.addEventListener('DOMContentLoaded', () => {
-        const container = document.querySelector('[data-level-id]');
-        document.body.dataset.levelId = container.dataset.levelId;
-        document.body.dataset.domain = container.dataset.domain;
-        document.body.dataset.csrf = container.dataset.csrf;
-    });
+    async function triggerEvaluation() {
+        const editor = document.getElementById('codeEditor');
+        const runBtn = document.getElementById('runBtn');
+        const runBtnText = document.getElementById('runBtnText');
+        const consoleDiv = document.getElementById('console');
+        const consoleBody = document.getElementById('consoleBody');
+        
+        const levelLayout = document.querySelector('.editor-layout');
+        const levelId = levelLayout.dataset.levelId;
+        const csrfToken = levelLayout.dataset.csrf;
+        
+        runBtn.disabled = true;
+        runBtnText.textContent = 'Synchronizing...';
+        consoleDiv.classList.remove('hidden');
+        consoleBody.textContent = 'Initiating kernel level verification...';
+        consoleBody.style.color = '#888';
 
-    function triggerEvaluation() {
-        evaluateCode('{{ level.domain.name }}', '{{ csrf_token }}');
+        try {
+            const domainName = levelLayout.dataset.domain;
+            const response = await fetch('/api/evaluate/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrfToken },
+                body: JSON.stringify({ domain: domainName, submitted_code: editor.value })
+            });
+            
+            const result = await response.json();
+            
+            if (result.status === 'success') {
+                consoleBody.textContent = '✓ VERIFICATION SUCCESSFUL. Master architectural link established.';
+                consoleBody.style.color = '#4ade80';
+                setTimeout(() => {
+                    window.location.href = result.next_url || "{% url 'dashboard:home' %}";
+                }, 1200);
+            } else {
+                consoleBody.textContent = '✖ LOGICAL CONFLICT DETECTED: ' + (result.message || result.error || 'Pattern mismatch.');
+                consoleBody.style.color = '#f87171';
+                if (result.hint) consoleBody.textContent += '\n\nGuidance Protocol: ' + result.hint;
+            }
+        } catch (error) {
+            consoleBody.textContent = 'FATAL: CONNECTION TO EVALUATION ENGINE SEVERED.';
+            consoleBody.style.color = '#f87171';
+        } finally {
+            runBtn.disabled = false;
+            runBtnText.textContent = 'Run Validation →';
+        }
     }
+
+    async function unlockHint(levelId, csrf) {
+        try {
+            const response = await fetch('/api/use-hint/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrf },
+                body: JSON.stringify({ level_id: levelId })
+            });
+            const result = await response.json();
+            if (result.status === 'success') loadHints();
+            else if (window.Toast) window.Toast.error(result.error || 'XP Insufficient.');
+        } catch (error) { console.error(error); }
+    }
+
+    async function loadHints() {
+        const levelLayout = document.querySelector('.editor-layout');
+        const levelId = levelLayout.dataset.levelId;
+        const hintList = document.getElementById('hintList');
+        const hintBtn = document.getElementById('hintBtn');
+        const hintBtnCost = document.getElementById('hintBtnCost');
+
+        const response = await fetch(`/api/hints/?level_id=${levelId}`);
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+            hintList.innerHTML = '';
+            data.unlocked_hints.forEach(hint => {
+                const hintDiv = document.createElement('div');
+                hintDiv.className = 'font-085 p-3 radius-md';
+                hintDiv.style.borderLeft = '3px solid var(--primary)';
+                hintDiv.style.background = 'var(--bg-base)';
+                hintDiv.innerHTML = `<span class="text-brand text-bold">PROTOCOL GUIDANCE ${hint.order}:</span> ${hint.content}`;
+                hintList.appendChild(hintDiv);
+            });
+            if (data.next_hint_cost) {
+                hintBtn.classList.remove('hidden');
+                hintBtnCost.textContent = `[-${data.next_hint_cost} XP]`;
+            } else hintBtn.classList.add('hidden');
+        }
+    }
+
+    async function loadPowers() {
+        const powerList = document.getElementById('powerList');
+        const response = await fetch('/api/user-powers/');
+        const data = await response.json();
+        if (data.status === 'success') {
+            powerList.innerHTML = '';
+            data.powers.forEach(p => {
+                const pDiv = document.createElement('div');
+                pDiv.className = 'd-flex justify-between align-center mb-2 font-085';
+                pDiv.innerHTML = `<span>${p.name}</span><span class="badge badge-primary">${p.quantity}</span>`;
+                powerList.appendChild(pDiv);
+            });
+            if (data.powers.length === 0) powerList.innerHTML = '<p class="text-muted font-08 text-center py-2">No tactical powers detected.</p>';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => { loadHints(); loadPowers(); });
 </script>
 {% endblock %}
-
+{% endblock %}

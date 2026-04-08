@@ -16,9 +16,9 @@
 </head>
 <body>
 
-    <div class="auth-container" style="border-color: var(--success);">
+    <div class="auth-container border-success">
         <div class="auth-header">
-            <h1 style="color: var(--success);">FORGE ACCOUNT</h1>
+            <h1 class="success">FORGE ACCOUNT</h1>
             <p>COMMENCE YOUR MASTERY</p>
         </div>
         
@@ -30,11 +30,11 @@
                     {{ field }}
                 </div>
             {% endfor %}
-            <button type="submit" class="auth-btn" style="background: var(--success);">CREATE &raquo;</button>
+            <button type="submit" class="auth-btn success">CREATE &raquo;</button>
         </form>
         
         <div class="auth-footer">
-            ALREADY MASTERED? <a href="{% url 'accounts:login' %}" style="color: var(--success);">LOGIN HERE</a>
+            ALREADY MASTERED? <a href="{% url 'accounts:login' %}" class="success">LOGIN HERE</a>
         </div>
     </div>
 

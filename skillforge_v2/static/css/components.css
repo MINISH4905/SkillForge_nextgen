@@ -1,0 +1,301 @@
+/**
+ * SkillForge - Professional Components CSS
+ * Sidebar, Navbar, Cards, Forms, Tables, Alerts, Modals.
+ */
+
+/* ── App Layout ──────────────────────────────────────────────────── */
+#app-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#sidebar {
+    width: var(--sidebar-width);
+    flex-shrink: 0;
+    height: 100%;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    transition: width var(--transition-base), transform var(--transition-base);
+}
+
+#main-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--bg-base);
+}
+
+/* ── Sidebar Components ─────────────────────────────────────────── */
+.sidebar-header {
+    height: var(--header-height);
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.logo span { color: var(--text-primary); }
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+    overflow-y: auto;
+}
+
+.nav-section {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.nav-label {
+    padding: 0 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    margin-bottom: 0.25rem;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background-color: var(--border);
+}
+
+.nav-link.active {
+    color: var(--primary);
+    background-color: var(--primary-dim);
+}
+
+.nav-icon { font-size: 1.125rem; line-height: 1; flex-shrink: 0; }
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+/* ── Content Area Header ────────────────────────────────────────── */
+#top-header {
+    height: var(--header-height);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-header);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+/* ── Cards ───────────────────────────────────────────────────────── */
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    transition: box-shadow var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+}
+
+.card-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+/* ── Forms ───────────────────────────────────────────────────────── */
+.form-group { margin-bottom: 1.5rem; }
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    background-color: var(--bg-base);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-dim);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+.btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-1px); }
+
+.btn-secondary {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+.btn-secondary:hover { background-color: var(--bg-base); border-color: var(--border-hover); }
+
+.btn-danger {
+    background-color: var(--danger);
+    color: #fff;
+}
+
+.btn-sm { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+
+/* ── Tables ──────────────────────────────────────────────────────── */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-surface);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th {
+    padding: 0.875rem 1rem;
+    background-color: var(--bg-sidebar);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid var(--border);
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.table tr:last-child td { border-bottom: none; }
+
+.table tr:hover { background-color: rgba(0, 0, 0, 0.02); }
+[data-theme="dark"] .table tr:hover { background-color: rgba(255, 255, 255, 0.02); }
+
+/* ── Badges ──────────────────────────────────────────────────────── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.badge-primary { background-color: var(--primary-dim); color: var(--primary); }
+.badge-success { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
+.badge-danger  { background-color: rgba(239, 68, 68, 0.15); color: var(--danger); }
+
+/* ── Alerts ──────────────────────────────────────────────────────── */
+.alert {
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.alert-error { background-color: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.2); color: var(--danger); }
+
+/* ── Theme Toggle Button ────────────────────────────────────────── */
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+    font-size: 1.125rem;
+}
+.theme-toggle:hover {
+    background-color: var(--border);
+    color: var(--text-primary);
+}
+
+/* ── Responsive Grid ─────────────────────────────────────────────── */
+.grid { display: grid; gap: 1.5rem; }
+.grid-cols-1 { grid-template-columns: 1fr; }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+    .grid-cols-3, .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+    .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+    #sidebar { position: fixed; transform: translateX(-100%); width: 280px; }
+    #sidebar.open { transform: translateX(0); box-shadow: var(--shadow-lg); }
+}

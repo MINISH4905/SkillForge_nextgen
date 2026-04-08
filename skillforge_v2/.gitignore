@@ -1,0 +1,132 @@
+# =========================
+# 🔐 ENV FILES (CRITICAL)
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# 🐍 PYTHON / DJANGO
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Media & static (generated files)
+media/
+staticfiles/
+static_root/
+
+# Migrations (optional)
+# Uncomment if you DON'T want migrations
+# */migrations/*
+# !*/migrations/__init__.py
+
+# =========================
+# 🌐 DJANGO SETTINGS & SECRETS
+# =========================
+secret.key
+*.pem
+*.crt
+
+# =========================
+# 🧪 TEST / COVERAGE
+# =========================
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+
+# =========================
+# 🐍 VIRTUAL ENVIRONMENTS
+# =========================
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# =========================
+# 📦 PYTHON BUILD FILES
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# ⚛️ REACT NATIVE / NODE
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Expo
+.expo/
+.expo-shared/
+
+# Metro bundler
+.expo/
+.expo-shared/
+
+# =========================
+# 🖥️ IDE / EDITOR FILES
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# 💻 OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# 📊 DATABASES (PRODUCTION)
+# =========================
+*.sqlite3
+
+# =========================
+# 🚀 DEPLOYMENT (AntigravityU scale)
+# =========================
+*.pid
+*.sock
+*.out
+*.err
+
+# Gunicorn
+gunicorn.log
+
+# Celery
+celerybeat-schedule
+
+# =========================
+# 📁 CACHE / TEMP FILES
+# =========================
+*.cache
+*.tmp
+temp/
+tmp/
+
+# =========================
+# 🔥 AI / ML (if used later)
+# =========================
+models/
+checkpoints/
+*.h5
+*.pt
+*.pth
+
+# =========================
+# 📂 UPLOADS (USER DATA)
+# =========================
+uploads/

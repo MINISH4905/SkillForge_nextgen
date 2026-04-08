@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: skillforge_app
+    command: gunicorn skillforge.wsgi:application --bind 0.0.0.0:8000 --workers 3
+    volumes:
+      - .:/app   # keeps db.sqlite3 persistent
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
